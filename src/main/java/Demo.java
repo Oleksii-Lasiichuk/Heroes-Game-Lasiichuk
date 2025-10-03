@@ -20,6 +20,26 @@ abstract class Character {
         return this.hp > 0;
     }
 
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = Math.max(0, hp);
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = Math.max(0, power);
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "(hp=" + hp + ", power=" + power + ")";
+    }
 }
 
 class Hobbit extends Character{
