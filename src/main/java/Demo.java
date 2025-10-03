@@ -38,11 +38,12 @@ abstract class Character {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(hp=" + hp + ", power=" + power + ")";
+        return this.getClass().getSimpleName() + "{hp=" + hp + ", power=" + power + "}";
     }
 }
 
-class Hobbit extends Character{
+
+class Hobbit extends Character {
     public Hobbit(){
         super(0, 3);
     }
@@ -59,12 +60,12 @@ class Hobbit extends Character{
 
     @Override
     public String toString() {
-        return "Hobbit(" + power + ", " + hp + ")";
+        return "Hobbit{hp=" + hp + ", power=" + power + "}";
+    }
 }
 
-}
 
-class Elf extends Character{
+class Elf extends Character {
     public Elf(){
         super(10, 10);
     }
@@ -73,7 +74,7 @@ class Elf extends Character{
     public void kick(Character c){
         if (c.power < this.power) {
             c.hp = 0;
-            System.out.println("Fatality! Elf kills " + c);     
+            System.out.println("Fatality! Elf kills " + c);
         } else {
             c.hp -= 1;
             System.out.println("Elf: 'You got skills, you got skills' - about " + c);
@@ -82,9 +83,11 @@ class Elf extends Character{
 
     @Override
     public String toString() {
-        return "Elf(" + power + ", " + hp + ")";
+        return "Elf{hp=" + hp + ", power=" + power + "}";
     }
 }
+
+
 class King extends Character {
     public King(){
         super(ThreadLocalRandom.current().nextInt(5, 15),
